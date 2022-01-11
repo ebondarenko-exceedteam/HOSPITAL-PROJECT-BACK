@@ -1,0 +1,25 @@
+{
+  "name": "hospital_project_back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebondarenko-exceedteam/HOSPITAL-PROJECT-BACK.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebondarenko-exceedteam/HOSPITAL-PROJECT-BACK/issues"
+  },
+  "homepage": "https://github.com/ebondarenko-exceedteam/HOSPITAL-PROJECT-BACK#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6",
+    "nodemon": "^2.0.15"
+  }
+}
