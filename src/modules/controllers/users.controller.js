@@ -24,3 +24,20 @@ module.exports.createNewUser = async (req, res, next) => {
     res.status(400).json({data: 'Registration error'});
   });
 };
+
+module.exports.authorizationUser = (req, res, next) => {
+  const { login, password } = req.body;
+  Users.findOne({login}).then(result => {
+    if (!result) {
+      return res.status(404).json({data: 'User not found'});
+    };
+    const validPassword = bcrypt.compareSync(password, result.password);
+    if (!validPassword) {
+      return res.status(412).json({data: 'Incorrect password'})
+    }
+    const token = generateAccessToken(result._id);
+    res.send({token, login});
+  }).catch(err => {
+    res.status(400).json({data: 'Authorization error'});
+  });
+};

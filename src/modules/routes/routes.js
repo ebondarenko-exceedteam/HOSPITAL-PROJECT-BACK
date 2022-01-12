@@ -15,7 +15,7 @@ const {
 
 //Users routes
 router.post('/createNewUser', createNewUser);
-// router.get('/authorizationUser', authorizationUser);
+router.post('/authorizationUser', authorizationUser);
 
 //Registration routes
 // router.get('/getAllRegistrations', getAllRegistrations);
