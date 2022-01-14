@@ -6,21 +6,21 @@ const {
   authorizationUser
 } = require('../controllers/users.controller');
 
-// const {
-//   getAllRegistrations,
-//   createNewRegistration,
-//   changeRegistration,
-//   deleteRegistration
-// } = require('../controllers/registration.controller');
+const {
+  getAllAppointments,
+  // createNewAppointment,
+//   changeAppointment,
+//   deleteAppointment
+} = require('../controllers/appointment.controller');
 
 //Users routes
 router.post('/createNewUser', createNewUser);
 router.post('/authorizationUser', authorizationUser);
 
-//Registration routes
-// router.get('/getAllRegistrations', getAllRegistrations);
-// router.post('/createNewRegistration', createNewRegistration);
-// router.patch('/changeRegistration', changeRegistration);
-// router.delete('/deleteRegistration', deleteRegistration);
+//Appointment routes
+router.get('/getAllAppointments', getAllAppointments);
+// router.post('/createNewAppointment', createNewAppointment);
+// router.patch('/changeAppointment', changeAppointment);
+// router.delete('/deleteAppointment', deleteAppointment);
 
 module.exports = router;
