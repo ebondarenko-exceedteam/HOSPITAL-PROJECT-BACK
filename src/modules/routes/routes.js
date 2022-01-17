@@ -8,7 +8,7 @@ const {
 
 const {
   getAllAppointments,
-  // createNewAppointment,
+  createNewAppointment,
 //   changeAppointment,
 //   deleteAppointment
 } = require('../controllers/appointment.controller');
@@ -19,7 +19,7 @@ router.post('/authorizationUser', authorizationUser);
 
 //Appointment routes
 router.get('/getAllAppointments', getAllAppointments);
-// router.post('/createNewAppointment', createNewAppointment);
+router.post('/createNewAppointment', createNewAppointment);
 // router.patch('/changeAppointment', changeAppointment);
 // router.delete('/deleteAppointment', deleteAppointment);
 

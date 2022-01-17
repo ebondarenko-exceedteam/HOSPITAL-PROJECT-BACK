@@ -19,7 +19,7 @@ module.exports.createNewUser = async (req, res, next) => {
   users.save().then(result => {
     const { _id } = result;
     const token = generateAccessToken(_id);
-    res.send({token, _id});
+    res.send({token});
   }).catch(err => {
     res.status(400).json({data: 'Registration error'});
   });
@@ -37,7 +37,7 @@ module.exports.authorizationUser = (req, res, next) => {
       return res.status(412).json({data: 'Incorrect password'})
     }
     const token = generateAccessToken(_id);
-    res.send({token, _id});
+    res.send({token});
   }).catch(err => {
     res.status(400).json({data: 'Authorization error'});
   });
