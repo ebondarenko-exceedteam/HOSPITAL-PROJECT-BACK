@@ -40,3 +40,16 @@ module.exports.changeAppointment = (req, res, next) => {
     }).catch(err => res.status(404).json({data: 'Appointments not found'}))
   })
 };
+
+module.exports.deleteAppointment = (req, res, next) => {
+  const token = req.headers.authorization;
+  const userId = jwt.verify(token, secret).id;
+  if (!userId) {
+    res.status(401).json({data: 'Token error'})
+  }
+  Appointment.deleteOne({_id: req.body._id}, () => {
+    Appointment.find({userId}).then(result => {
+      res.send({data: result})
+    }).catch(err => res.status(404).json({data: 'Appointments not found'}))
+  })
+};
